@@ -1,0 +1,320 @@
+<!-- This is the public HTML file
+comment the part you are working on.
+Then we can work individually on our own part  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Project 3: Winter is Coming</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./stylesheets/styles.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNRZQ5vxbuyKvs4tOfPB7sTR9qokHcqA0&libraries=places&callback=initMap" async defer></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-sm bg- navbar-custom">
+  <div class="navbar-nav mx-auto">
+
+    <button type="button" class="btn btn-custom" id="StAndrews">St Andrews</button>&nbsp
+    <button type="button" class="btn btn-custom" id="Cupar">Cupar</button>&nbsp
+    <button type="button" class="btn btn-custom" id="Dundee">Dundee</button>&nbsp
+    <button type="button" class="btn btn-custom" id="Newport">New Port</button>
+
+
+
+  </div>
+    </nav>
+  <br>
+
+
+  <div id="sections" class="container">
+
+    <div id="row1" class="row">
+
+      <div id="newsBlock" class="col-lg-6">
+
+
+        <div id="borderNews" class="border">
+          <div id="newsGallery" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#newsGallery" data-slide-to="0" class="active"></li>
+              <li data-target="#newsGallery" data-slide-to="1"></li>
+              <li data-target="#newsGallery" data-slide-to="2"></li>
+              <li data-target="#newsGallery" data-slide-to="3"></li>
+              <li data-target="#newsGallery" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner" id='newsContent'>
+              <div class="carousel-item active" id='newsImg1'>
+                <div class="carousel-caption d-none d-md-block" id='newsTitle1'></div>
+              </div>
+              <div class="carousel-item" id='newsImg2'>
+                <div class="carousel-caption d-none d-md-block" id='newsTitle2'></div>
+              </div>
+              <div class="carousel-item" id='newsImg3'>
+                <div class="carousel-caption d-none d-md-block" id='newsTitle3'></div>
+              </div>
+              <div class="carousel-item" id='newsImg4'>
+                <div class="carousel-caption d-none d-md-block" id='newsTitle4'></div>
+              </div>
+              <div class="carousel-item" id='newsImg5'>
+                <div class="carousel-caption d-none d-md-block" id='newsTitle5'></div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#newsGallery" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#newsGallery" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+
+<!--
+            <p>News section feel free to add/ modify stuff</p>
+        <div class="newsImage">
+
+
+          <div class="responsive-image">
+
+            <div class="image-load" data-src="https://hhh.jpg" data-width="100" data-height="10"></div>
+
+
+
+            <button type="button" class="btn btn-link" id="news">News</button>
+
+
+            <br>
+            <br></br>
+
+            <button type="button" class="btn btn-link" id="newsHeader">News Header</button>
+            <br>
+
+            <div class="news__body">
+              <button type="button" class="btn btn-link" id="newsSummary">News summary</button>
+              <br>
+
+            </div>
+          </div>
+        </div>-->
+      </div>
+  </div>
+
+      <div id="weatherblock" class="col-lg-6">
+<div id="borderWeather" class="border">
+<!--         <p>Weather section feel free to add/ modify stuff</p>
+
+        <button type="button" class="btn btn-link" id="weather">Weather</button>
+
+        <div id='weatherButtons'>
+          <button id="StAndrews" class='town'>St Andrews</button>
+          <button id="Cupar" class='town'>Cupar</button>
+          <button id="Dundee" class='town'>Dundee</button>
+          <button id="Newport" class='town'>Newport</button>
+        </div> -->
+        <div id='weatherDiv' class="container">
+          <div id='weatherInfo'></div>
+          <div class="row">
+            <div id='weatherIcon' class="col-3"></div>
+            <div id='currentTemp' class="col"></div>
+            <div id='weathermoreInfo'class="col"></div>
+          </div>
+          <div id='dayForecast'></div>
+          <div id='weekForecastDiv' class="row"></div>
+        </div>
+
+      </div>
+  </div>
+    </div>
+    <br></br>
+
+    <div id="row2" class="row">
+      <div id="newBlock" class="col-lg-6">
+        <div id="borderNew" class="border">
+  <p>section we havent decided what to put there yet</p>
+
+
+
+        <button type="button" class="btn btn-link" id="news">New section</button>
+        <br>
+        <br></br>
+  </div>
+
+      </div>
+
+      <div id="Map" class="col-lg-6">
+        <div id="borderMap" class="border">
+        <p>This is the map place. You can modify it whatever you want</p>
+
+
+        <button type="button" class="btn btn-link" id="weather">Map</button>
+
+  </div>
+
+      </div>
+
+    </div>
+    <br><br></br>
+    <div id="row3" class="row">
+      <div id="Forum" class="col-lg-6">
+          <div id="borderFo" class="border-top">
+
+
+        <button type="button" class="btn btn-link" id="ForumButton">Forum</button>
+
+      </div>      </div>
+      <div id="Data" class="col-lg-6">
+        <div id="borderFo" class="border-top">
+
+<!-- <div id="details" class="container"> -->
+ <form class="form-inline" action="/action_page.php">
+
+  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"> &nbsp;
+
+  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">&nbsp;
+
+
+
+  <button type="submit" class="btn btn-primary" id="log">Log in</button> &nbsp;
+    <button type="submit" class="btn btn-primary" id="log">SIgn up</button>
+  <!-- </div> -->
+</form>
+</div>
+  </div>  </div>
+  <br>
+
+<div id="row4" class="row">
+  <div id="AddTopic" class="col-lg-12">
+  <h5 id="BrowseQ">Browse Questions</h5>
+
+
+
+  <button type="button" class="btn btn-custom1" id="ButtonAdd">Ask a Question</button>
+
+  </div>
+
+</div><br>
+
+
+
+<div id="row5" class="row">
+  <div id="LeftPanel" class="col-lg-4">
+  <button type="button" class="btn btn-link" id="ForumBrowse">Browse categories</button><br>
+  <button type="button" class="btn btn-link" id="ForumBrowse">Photos & Videos</button><br>
+    <button type="button" class="btn btn-link" id="ForumBrowse">Events</button>
+  </div>
+  <div id="AddTopic" class="col-lg-8">
+
+
+
+
+<div id="forumTop" class="border">
+<button type="button" class="btn btn-link" id="top1">Most recent</button>
+<button type="button" class="btn btn-link"id="top1">Top questions</button></div>
+
+
+
+
+
+</div>
+
+</div>
+
+
+<div id="row6" class="row">
+
+    <div id="LeftPanel" class="col-lg-4"></div>
+  <div id="AddQuestion" class="col-lg-8">
+  <h5 id="AddP">Add a Post</h5>
+<!-- <button type="button" class="btn btn-link" id="Qtitle">Question title</button><br> -->
+
+<div class="Qcategory">
+  <button type="button" class="btn btn-primary dropdown-toggle" id="category" data-toggle="dropdown">
+    Select category
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">1</a>
+    <a class="dropdown-item" href="#">2</a>
+    <a class="dropdown-item" href="#">3</a>
+  </div>
+</div><br></br>
+
+<label for="Qtitle">Post Title</label>
+<input type="text" class="form-control" id="Qtitle"><br></br>
+<div class="form-group">
+    <label for="TypeQ">Type your question</label>
+    <textarea class="form-control" id="TextareaQ" rows="3"></textarea>
+  </div>
+
+
+  <!-- Update the file  -->
+  <input type="file" id="files" name="files[]" multiple/>
+  <output id="list"></output>
+  <button id="sendButton">Send</button>
+
+
+<br><br></br>
+
+<h5 id="Submitted">Your Reply</h5><br>
+
+<label for="Qtitle">Post Title</label>
+<input type="text" class="form-control" id="Qtitle"><br></br>
+
+<div class="form-group">
+      <textarea class="form-control" id="TextareaR" rows="3"></textarea>
+  </div>
+
+
+  <!-- Update the file  -->
+  <input type="file" id="files" name="files[]" multiple/>
+  <output id="list"></output>
+  <button id="sendButton">Send</button>
+
+<br></br>
+    <!-- <h1 id="SubmittedR">You reply was submitted!</h1><br> -->
+  </div>
+
+
+
+</div>
+</div>
+
+</div>
+
+ <footer class="footer">
+      <div class="container">
+<p>Group 2</p>
+
+   </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="./javascripts/model.js"></script>
+    <script src="./javascripts/map.js"></script>
+    <script src="./javascripts/weather_news.js"></script>
+    <script src="./javascripts/fileUpload.js"></script>
+    <script src="./javascripts/form.js"></script>
+    <script src="./javascripts/client.js"></script>
+
+</body>
+
+
+
+
+</html>
